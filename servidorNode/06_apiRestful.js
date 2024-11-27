@@ -6,6 +6,7 @@ app.use(express.json());
 let usuarios = [
     { id: 1, nombre: 'Juan', email: 'juan@email.com' },
     { id: 2, nombre: 'Maria', email: 'Maria@email.com' },
+    { id: 3, nombre: 'Lucia', email: 'Lucia@email.com' },
 ];
 
 // endpoint obtener todos los usuarios
