@@ -1,0 +1,45 @@
+function validarPedido(pedidoId){
+    return new Promise((resolve) => {
+        console.log(`Validando el pedido ${pedidoId}`);
+        setTimeout(() =>{
+            resolve(`Pedido ${pedidoId} validado`);
+        }, 2000);
+    });
+}
+
+function notificarAlmacen(pedidoId){
+    return new Promise((resolve) => {
+        console.log(`Notificando al almacen sobre el pedido ${pedidoId}`);
+        setTimeout(() =>{
+            resolve(`Almacen notificado para el pedido ${pedidoId}.`);
+        }, 1000);
+    });
+}
+
+function confirmarFinanzas(pedidoId){
+    return new Promise((resolve) => {
+        console.log(`Confirmando a finanzas el pedido ${pedidoId}`);
+        setTimeout(() =>{
+            resolve(`Finanzas notificado para el pedido ${pedidoId}.`);
+        }, 1000);
+    });
+
+}
+
+async function procesarPedido(pedidoId) {
+    console.log(`Iniciando el procesamiento del pedido ${pedidoId}`);
+
+    const resultadoValidacion = await validarPedido(pedidoId);
+    console.log(resultadoValidacion);
+    
+    const resultadoAlmacen = await notificarAlmacen(pedidoId);
+    console.log(resultadoAlmacen);
+
+    const resultadofinanzas = await confirmarFinanzas(pedidoId);
+    console.log(resultadofinanzas);
+
+    console.log(`Pedido ${pedidoId} procesando exitosamente`);
+    
+}
+
+procesarPedido(1234)
