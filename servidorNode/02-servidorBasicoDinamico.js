@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
 
     if(parsedUrl.pathname === '/'){
         res.writeHead(200,{ 'Content-Type': 'text/plain' });
-        res.end('Bienvenido a la página principal');
+        res.end('Bienvenido a la página principal, gracias por confiar en nosotros ');
     } else if (parsedUrl.pathname === '/usuario'){
         res.writeHead(200,{ 'Content-Type': 'text/plain' });
         res.end(`Hola, ${name}`);
